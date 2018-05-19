@@ -4,7 +4,7 @@ defmodule Stats.Mixfile do
   def project do
     [
       app: :stats,
-      version: "0.0.1",
+      version: "0.0.2",
       elixir: "~> 1.4",
       elixirc_paths: elixirc_paths(Mix.env),
       compilers: [:phoenix, :gettext] ++ Mix.compilers,
@@ -20,7 +20,7 @@ defmodule Stats.Mixfile do
   def application do
     [
       mod: {Stats.Application, []},
-      extra_applications: [:logger, :runtime_tools]
+      extra_applications: [:logger, :runtime_tools, :edeliver]
     ]
   end
 
@@ -42,7 +42,8 @@ defmodule Stats.Mixfile do
       {:gettext, "~> 0.11"},
       {:cowboy, "~> 1.0"},
       {:cors_plug, "~> 1.5"},
-      {:distillery, "~> 1.5"}
+      {:distillery, "~> 1.5"},
+      {:edeliver, "~> 1.5"}
     ]
   end
 
