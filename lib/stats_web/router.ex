@@ -17,7 +17,7 @@ defmodule StatsWeb.Router do
     # pipe_through :browser # Use the default browser stack
 
     get "/stats", PageController, :index
-    post "/stats", PageController, :index
+    post "/stats", PageController, :post_event
   end
 
   # Other scopes may use custom stacks.
