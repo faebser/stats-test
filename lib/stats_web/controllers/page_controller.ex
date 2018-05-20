@@ -8,7 +8,9 @@ defmodule StatsWeb.PageController do
 
   def post_event(conn, params) do
   	IO.inspect params
-  	event = struct(Event, params)
+    action = params[:action]
+    domain = params[:domain]
+    event = %Event{action: action, domain: domain}
     IO.inspect event
   	Repo.insert event
   	render conn, "ok.html" 
