@@ -6,13 +6,13 @@ defmodule StatsWeb.PageController do
     render conn, "index.html"
   end
 
-  def post_event(conn, params) do
-  	IO.inspect params
-    action = params[:action]
-    domain = params[:domain]
+  def post_event(conn, %{"action" => action, "domain" => domain}) do
     event = %Event{action: action, domain: domain}
-    IO.inspect event
   	Repo.insert event
   	render conn, "ok.html" 
+  end
+
+  def post_event(conn, _) do
+    render conn, "ok.html"
   end
 end
