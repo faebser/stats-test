@@ -48,11 +48,6 @@ defmodule StatsWeb.Endpoint do
   configuration should be loaded from the system environment.
   """
   def init(_key, config) do
-    if config[:load_from_system_env] do
-      port = System.get_env("STATS_PORT") || raise "expected the STATS_PORT environment variable to be set"
-      {:ok, Keyword.put(config, :http, [:inet6, port: port])}
-    else
-      {:ok, config}
-    end
+      {:ok, Keyword.put(config, :http, [:inet6, port: 8080])}
   end
 end
