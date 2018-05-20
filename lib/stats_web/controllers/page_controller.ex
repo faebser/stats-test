@@ -9,7 +9,8 @@ defmodule StatsWeb.PageController do
   def post_event(conn, params) do
   	IO.inspect params
   	event = struct(Event, params)
+    IO.inspect event
   	Repo.insert event
-  	render conn, "ok.html"
+  	render conn, "ok.html" 
   end
 end
