@@ -9,10 +9,10 @@ defmodule StatsWeb.PageController do
   def post_event(conn, %{"action" => action, "domain" => domain}) do
     event = %Event{action: action, domain: domain}
   	Repo.insert event
-  	render conn, "ok.html" 
+  	text conn, "ok" 
   end
 
   def post_event(conn, _) do
-    render conn, "ok.html"
+    text conn, "not okay"
   end
 end
